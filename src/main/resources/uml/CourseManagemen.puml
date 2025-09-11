@@ -1,0 +1,28 @@
+@startuml CourseManagement
+
+
+class Course{
+    String code
+    String name
+    int max
+    List students
+    isFull(): boolean
+    addStudent(Student s): void
+}
+
+class Student{
+    String id
+    String name
+    String email
+    List courses
+
+    addCourse(): void
+}
+
+class Registration{
+    Date date
+    Course course
+    Student student
+}
+
+@enduml
