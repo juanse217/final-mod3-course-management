@@ -3,7 +3,8 @@ package com.sebastian.cursos.repository.memory;
 import java.util.ArrayList;
 import java.util.List;
 
-
+import com.sebastian.cursos.model.Course;
+import com.sebastian.cursos.model.FullCourseException;
 import com.sebastian.cursos.model.Registration;
 import com.sebastian.cursos.model.Student;
 import com.sebastian.cursos.repository.IRegistrationRepository;
@@ -33,8 +34,13 @@ public class MemoryRegistrationRepositoryImpl implements IRegistrationRepository
     }
 
     @Override
-    public void registerStudent(Registration registration) {
-        registrations.add(registration);
+    public void registerStudent(Student st, Course course) {
+        if(course.isFull()){
+            throw new FullCourseException("The course is full");
+        }
+        course.addStudent(st);
+        st.addCourse(course);
+        registrations.add(new Registration(course, st));
     }
 
 }

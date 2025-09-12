@@ -28,7 +28,7 @@ public class Registration {
     @Override
     public String toString() {
         return "Registration [registrationDate=" + registrationDate + ", course=" + course + ", student=" + student
-                + "]";
+                + "]\n";
     }
 
     

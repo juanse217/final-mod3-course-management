@@ -41,7 +41,7 @@ public class MemoryCourseRepositoryImpl implements ICourseRepository{
     }
 
     @Override
-    public void deletCoursebyCode(String code) {
+    public void deleteCoursebyCode(String code) {
         courses = courses.stream().filter(x -> x.getCode() != code).toList();
     }
 
