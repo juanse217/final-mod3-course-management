@@ -1,5 +1,12 @@
 package com.sebastian.cursos.repository;
 
-public interface IRegistrationRepository {
+import java.util.List;
 
+import com.sebastian.cursos.model.Registration;
+import com.sebastian.cursos.model.Student;
+import com.sebastian.cursos.sharedExceptions.RegistrationNotFoundException;
+
+public interface IRegistrationRepository {
+    List<Registration> getRegistrationsByStudent(Student student) throws RegistrationNotFoundException;
+    void registerStudent(Registration registration);
 }
