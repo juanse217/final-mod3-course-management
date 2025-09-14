@@ -14,6 +14,8 @@ public class ManagerService {
     private MemoryRegistrationRepositoryImpl regisRepo; 
     private MemoryCourseRepositoryImpl courseRepo; 
 
+    //TODO: tests with JUnit and Mockito, and Logs. 
+
     public ManagerService(){
         regisRepo = new MemoryRegistrationRepositoryImpl();
         courseRepo = new MemoryCourseRepositoryImpl(); 
