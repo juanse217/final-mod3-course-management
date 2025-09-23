@@ -3,7 +3,6 @@ package com.sebastian.cursos.model;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.sebastian.cursos.repository.memory.MemoryCourseRepositoryImpl;
 
 
 public class Course {
