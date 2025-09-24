@@ -1,10 +1,14 @@
 package com.sebastian;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.sebastian.cursos.model.Course;
 import com.sebastian.cursos.model.Student;
 import com.sebastian.cursos.service.ManagerService;
 
 public class Main {
+    private static final Logger logger = LoggerFactory.getLogger(Main.class);
     public static void main(String[] args) {
         ManagerService service = new ManagerService(); 
         Student st = new Student("Seb", "peligroso@gmail.com", "s1");
@@ -37,7 +41,7 @@ public class Main {
             service.deleteCourse("c1");
             System.out.println(service.getAllCourses());
         } catch (Exception e) {
-            System.out.println("Error " + e.getMessage());
+            logger.warn("Issue getting information " + e.getMessage());
         }
 
         System.out.println(course.getStudents());
